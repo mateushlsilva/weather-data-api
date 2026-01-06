@@ -1,6 +1,6 @@
 import { WeatherCurrent, WeatherLocation } from "./index";
 
-export interface WeatherApiResponse {
+export type WeatherApiResponse = {
   location: WeatherLocation;
   current: WeatherCurrent;
 }

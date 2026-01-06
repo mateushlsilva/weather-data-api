@@ -1,4 +1,4 @@
-export interface WeatherLocation {
+export type WeatherLocation = {
   name: string;
   region: string;
   country: string;

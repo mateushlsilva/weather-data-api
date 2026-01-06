@@ -1,11 +1,11 @@
-export interface WeatherCondition {
+export type WeatherCondition = {
   text: string;
   icon: string;
   code: number;
 }
 
 
-export interface WeatherCurrent {
+export type WeatherCurrent = {
   last_updated_epoch: number;
   last_updated: string;
   temp_c: number;
