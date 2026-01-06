@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: gntech_api
+    restart: always
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+    networks:
+      - db_network
+      - redis_network
+    volumes:
+      - .:/app
+    command: ["npm", "run", "dev"]
+
+  db:
+    image: postgres:16
+    container_name: gntech_postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=gntech_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - db_network
+
+  redis:
+    image: redis:7
+    container_name: gntech_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    networks:
+      - redis_network
+
+volumes:
+  pgdata:
+  redisdata:
+
+networks:
+  db_network:
+    driver: bridge
+  redis_network:
+    driver: bridge
