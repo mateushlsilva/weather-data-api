@@ -9,6 +9,8 @@ services:
       - "3001:3001"
     env_file:
       - .env
+    environment:
+      - API=https://api.weatherapi.com/v1/current.json
     depends_on:
       - db
       - redis
