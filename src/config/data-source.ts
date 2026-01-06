@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm";
 import * as dotenv from "dotenv";
+import { City, Climate } from "../entities";
 dotenv.config();
 
 
@@ -12,7 +13,7 @@ const AppDataSource = new DataSource({
     password: process.env.DB_PASS, 
     synchronize: false,
     logging: false, 
-    entities: ["src/entities/*.ts"], 
+    entities: [City, Climate], 
     migrations: ["src/migrations/*.ts"], 
     subscribers: [],
     maxQueryExecutionTime: 2000 // 2 seg.
