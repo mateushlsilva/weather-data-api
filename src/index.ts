@@ -1,12 +1,15 @@
 import express from "express";
 import * as dotenv from "dotenv";
 dotenv.config();
-
+import { ClimateService } from "./services";
+import { AppDataSource } from "./config";
 
 const app = express();
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
+
+
 
 const PORT = process.env.PORT || 3001;
 
