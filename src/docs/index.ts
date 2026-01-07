@@ -7,7 +7,7 @@ const options: swaggerJsdoc.Options = {
   swaggerDefinition: {
     openapi: "3.0.0",
     info: {
-      title: "GNTech API",
+      title: "Weather Data API",
       version: "1.0.0",
       description: "API para consulta do clima, integrada com Redis e Postgres",
       contact: {
