@@ -9,6 +9,10 @@ services:
       - "3001:3001"
     env_file:
       - .env
+    environment:
+      - API=https://api.weatherapi.com/v1/current.json
+      - DB_HOST=db
+      - REDIS_HOST=redis
     depends_on:
       - db
       - redis
@@ -17,7 +21,7 @@ services:
       - redis_network
     volumes:
       - .:/app
-    command: ["npm", "run", "dev"]
+    command: sh -c "npm run migration:run && npm run dev"
 
   db:
     image: postgres:16
