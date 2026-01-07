@@ -1,4 +1,4 @@
-import { CityService } from "./index";
+import CityService  from "./city.service";
 import { AppDataSource, redis } from "../config";
 import { Climate } from "../entities";
 import { getClimateCity } from "../external";
@@ -26,7 +26,8 @@ class ClimateService implements IClimate {
             return { climate, total, page, limit }
         }   
         catch (err) {
-            throw new Error(`Error: ${err}`)
+            console.error("ClimateService error:", err);
+            throw err;
         } 
     }
 
@@ -70,7 +71,8 @@ class ClimateService implements IClimate {
             return save
         }   
         catch (err) {
-            throw new Error(`Error: ${err}`)
+            console.error("ClimateService error:", err);
+            throw err;
         } 
     }
 }
