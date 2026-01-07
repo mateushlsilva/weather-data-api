@@ -37,6 +37,18 @@ Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
 ---
 
+## 🎥 Demonstração
+▶️ Assista ao vídeo de demonstração da API (1m31s):
+https://youtu.be/VyTKPcY-ows
+
+#### O vídeo demonstra:
+- Subida da aplicação com Docker Compose
+- Consulta de clima via endpoint 
+- Uso de cache com Redis
+- Documentação interativa via Swagger
+
+---
+
 ## 🚀 Rodando o Projeto
 
 ### 1. Com Docker
